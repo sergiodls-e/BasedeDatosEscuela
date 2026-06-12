@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{blindtext} 
+\usepackage{graphicx}
+\usepackage{float}
+
+%Preámbulo
+\author{Sergio De Luis}
+\title{Proceso de diseño de un modelo de datos para un sistema de gestión escolar}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introducción}
+Una institución educativa requiere digitalizar su operación. Actualmente lleva el control de manera manual o dispersa y requiere un sistema computacional integral que gestione sus departamentos, profesores, cursos, estudiantes, inscripciones, aulas, horarios y calificaciones.
+
+\section{Desarrollo del modelo}
+\blindtext
+
+\section{Modelo Entidad-Relación}
+\begin{figure}[H]
+    \centering
+    % Se mantiene la referencia al archivo de imagen, puedes cambiar el nombre si lo deseas
+    \includegraphics[width=0.8\textwidth]{derescuela.png}
+    \caption{Modelo ER para el sistema de gestión escolar}
+\end{figure}
+
+\section{Descripción del dominio}
+La escuela está organizada en diversos departamentos académicos, los cuales agrupan a los profesores. Cada profesor pertenece a un único departamento y puede impartir uno o varios cursos a lo largo del ciclo escolar. De los profesores se almacena su nombre, apellido, correo electrónico y su adscripción.
+
+Los cursos cuentan con una cantidad determinada de créditos y tienen asignado un profesor titular. Para que los estudiantes puedan cursar estas materias, deben realizar un proceso de inscripción, el cual registra la fecha en la que se efectúa. Un estudiante puede inscribirse a múltiples cursos y cada curso puede tener muchos estudiantes inscritos.
+
+La gestión operativa de las clases se controla mediante la asignación de aulas (las cuales tienen una capacidad física máxima) y horarios específicos, detallando el día de la semana, la hora de inicio y la hora de fin para cada curso. Finalmente, el rendimiento académico se evalúa asociando notas numéricas directamente a cada inscripción realizada por los estudiantes.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Qué identificar} & \textbf{Pista} \\ \hline
+Entidades & Qué cosa del dominio tiene datos propios (ej. Estudiantes, Profesores) \\ \hline
+Atributos Clave & Qué datos identifican de forma única a cada entidad (id) \\ \hline
+Relaciones & Qué cosas del dominio están relacionadas entre sí \\ \hline
+\end{tabular}
+\caption{Identificación de entidades, atributos clave y relaciones del sistema escolar}
+\end{table}
+
+\section{Implementación del modelo en MySQL}
+\blindtext
+
+\end{document}
